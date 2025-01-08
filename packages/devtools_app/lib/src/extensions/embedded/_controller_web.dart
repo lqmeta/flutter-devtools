@@ -8,6 +8,8 @@ import 'dart:ui_web' as ui_web;
 import 'package:devtools_app_shared/utils.dart';
 import 'package:devtools_extensions/api.dart';
 import 'package:devtools_shared/devtools_extensions.dart';
+// Logger
+import 'package:logging/logging.dart';
 import 'package:path/path.dart' as path;
 import 'package:web/web.dart';
 
@@ -18,6 +20,8 @@ import '../../shared/primitives/utils.dart';
 import '../../shared/server/server.dart';
 import '../../shared/utils/utils.dart';
 import 'controller.dart';
+
+final _log = Logger('_controller_web');
 
 /// Incrementer for the extension iFrame view that will live for the entire
 /// DevTools lifecycle.
@@ -112,6 +116,10 @@ class EmbeddedExtensionControllerImpl extends EmbeddedExtensionController
     DevToolsExtensionEventType type, {
     Map<String, String> data = const <String, String>{},
   }) {
+    _log.info(
+      'type: $type'
+      'data: $data'
+    );
     extensionPostEventStream.add(DevToolsExtensionEvent(type, data: data));
   }
 

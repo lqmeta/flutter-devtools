@@ -11,6 +11,8 @@ import 'package:devtools_extensions/api.dart';
 import 'package:devtools_extensions/utils.dart';
 import 'package:devtools_shared/devtools_shared.dart';
 import 'package:flutter/material.dart';
+// Logger
+import 'package:logging/logging.dart';
 import 'package:web/web.dart';
 
 import '../../shared/config_specific/copy_to_clipboard/copy_to_clipboard.dart';
@@ -20,6 +22,8 @@ import '../../shared/ui/common_widgets.dart';
 import '../../shared/utils/utils.dart';
 import '_controller_web.dart';
 import 'controller.dart';
+
+final _log = Logger('_view_web');
 
 class EmbeddedExtension extends StatefulWidget {
   const EmbeddedExtension({super.key, required this.controller});
@@ -162,6 +166,10 @@ class _ExtensionIFrameController extends DisposableController
     // [integrationTestMode] is true so that [_postMessage] calls are a no-op.
     if (integrationTestMode) return;
 
+    _log.info(
+      '_postMessage'
+    );
+
     await _iFrameReady.future;
     final message = event.toJson();
     assert(
@@ -275,6 +283,12 @@ class _ExtensionIFrameController extends DisposableController
     if (!event.type.supportedForDirection(ExtensionEventDirection.toDevTools)) {
       return;
     }
+
+    _log.info(
+      '[onEventReceived]'
+      'type: ${event.type}'
+      'event: $event'
+    );
 
     switch (event.type) {
       case DevToolsExtensionEventType.pong:
