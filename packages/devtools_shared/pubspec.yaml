@@ -27,3 +27,8 @@ dependencies:
 
 dev_dependencies:
   test: ^1.21.2
+
+# dependency_overrides:
+#   devtools_shared:
+#     # path: relative/path/to/devtools/packages/devtools_shared
+#     path: /Users/coder/wm/github/open-source/flutter/devtools/packages/devtools_shared

@@ -9,6 +9,8 @@ import 'package:devtools_app_shared/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
+// debugPrint
+// import 'package:flutter/foundation.dart';
 
 import '../../shared/analytics/analytics.dart' as ga;
 import '../../shared/analytics/constants.dart' as gac;
@@ -147,7 +149,7 @@ class DisconnectedPerformanceScreenBody extends StatelessWidget {
   const DisconnectedPerformanceScreenBody({super.key});
 
   static const importInstructions =
-      'Open a performance data file that was previously saved from DevTools.';
+      'Open a performance data file that was previously saved from DevTools. 1111';
 
   @override
   Widget build(BuildContext context) {
@@ -158,6 +160,9 @@ class DisconnectedPerformanceScreenBody extends StatelessWidget {
       gaSelectionImport: gac.PerformanceEvents.openDataFile.name,
       gaSelectionAction: gac.PerformanceEvents.loadDataFromFile.name,
       onAction: (jsonFile) {
+        debugPrint(
+          '[FileImportContainer] [onAction] 2 $jsonFile'
+        );
         Provider.of<ImportController>(
           context,
           listen: false,
@@ -184,7 +189,7 @@ const performancePanelLink =
     'https://developer.chrome.com/docs/devtools/performance';
 
 const flutterWebInstructionsMd = '''
-## How to use Chrome DevTools for performance profiling
+## How to use Chrome DevTools for performance profiling  1111
 
 The Flutter framework emits timeline events as it works to build frames, draw
 scenes, and track other activity such as garbage collections. These events are

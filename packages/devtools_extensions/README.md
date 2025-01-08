@@ -38,16 +38,23 @@ Follow the instructions below to get started, and use the
 for reference.
 
 # Table of contents
-1. [Create a DevTools extension](#create-a-devtools-extension)
-      - [Step 1: Setup your package hierarchy](#step-1-setup-your-package-hierarchy)
-        - [Standalone extensions](#standalone-extensions)
-        - [Companion extensions](#companion-extensions)
-      - [Step 2: Configure your extension](#step-2-configure-your-extension)
-      - [Step 3: Build your extension](#step-3-build-your-extension)
-      - [Step 4: Debug your extension](#step-4-debug-your-extension)
-2. [Publish your package with a DevTools extension](#publish-your-package-with-a-devTools-extension)
-3. [Resources and support](#resources-and-support)
-4. [Testimonies from extension authors](#testimonies-from-extension-authors)
+- [Dart \& Flutter DevTools Extensions](#dart--flutter-devtools-extensions)
+    - [What types of tools are supported?](#what-types-of-tools-are-supported)
+- [Table of contents](#table-of-contents)
+  - [Create a DevTools Extension](#create-a-devtools-extension)
+    - [Step 1: Setup your package hierarchy](#step-1-setup-your-package-hierarchy)
+      - [Standalone extensions](#standalone-extensions)
+      - [Companion extensions](#companion-extensions)
+    - [Step 2: Configure your extension](#step-2-configure-your-extension)
+    - [Step 3: Build your extension](#step-3-build-your-extension)
+    - [Step 4: Debug your extension](#step-4-debug-your-extension)
+      - [Use the Simulated DevTools Environment (recommended for development)](#use-the-simulated-devtools-environment-recommended-for-development)
+      - [Use a real DevTools Environment](#use-a-real-devtools-environment)
+  - [Publish your package with a DevTools extension](#publish-your-package-with-a-devtools-extension)
+    - [What if I don't want the `extension/devtools/build/` contents checked into source control?](#what-if-i-dont-want-the-extensiondevtoolsbuild-contents-checked-into-source-control)
+  - [Resources and support](#resources-and-support)
+  - [Testimonies from extension authors](#testimonies-from-extension-authors)
+  - [Supported Flutter versions](#supported-flutter-versions)
 
 ## Create a DevTools Extension
 

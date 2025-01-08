@@ -5,7 +5,9 @@
 import 'dart:convert';
 
 import 'package:devtools_app_shared/service.dart';
+import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
+import 'package:logging/logging.dart';
 
 import '../../framework/screen.dart';
 import '../../globals.dart';
@@ -13,6 +15,8 @@ import '../../primitives/encoding.dart';
 import '../../primitives/utils.dart';
 import '../../utils/utils.dart';
 import '_export_desktop.dart' if (dart.library.js_interop) '_export_web.dart';
+
+final _log = Logger('import_export');
 
 const nonDevToolsFileMessage =
     'The imported file is not a Dart DevTools file.'
@@ -58,6 +62,13 @@ class ImportController {
     previousImportTime = now;
 
     final json = jsonFile.data;
+    debugPrint(
+      '$jsonFile'
+    );
+    _log.info(
+      jsonFile
+    );
+    // printToConsole(jsonFile);
     final isDevToolsSnapshot =
         json is Map<String, Object?> &&
         json[DevToolsExportKeys.devToolsSnapshot.name] == true;

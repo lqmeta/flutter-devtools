@@ -4,6 +4,7 @@
 
 import 'package:devtools_app_shared/ui.dart';
 import 'package:devtools_app_shared/utils.dart';
+// debugPrint
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -193,6 +194,9 @@ class DisconnectedCpuProfilerScreenBody extends StatelessWidget {
       gaSelectionImport: gac.CpuProfilerEvents.openDataFile.name,
       gaSelectionAction: gac.CpuProfilerEvents.loadDataFromFile.name,
       onAction: (jsonFile) {
+        debugPrint(
+          '[FileImportContainer] [onAction] 1 $jsonFile'
+        );
         Provider.of<ImportController>(
           context,
           listen: false,
